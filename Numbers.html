@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Numbers</title>
+    <script type="text/javascript">
+        var MixedArray = [1, "apple", -3, "orange", 0.5, "peach", "pear", "pickle", 44];
+        var NewArray = [];
+		function NumbersOnly(){
+            for (var check = 0; check<MixedArray.length; check++){ 
+               if (typeof(MixedArray[check]) == "number"){
+                   NewArray.push(MixedArray[check]);
+               }
+            }
+            console.log(NewArray);
+        }
+        NumbersOnly(MixedArray)
+        
+        function RemoveStrngs(){
+            for (var i=0; i<MixedArray.length; i++){
+                while(typeof(MixedArray[i])!="number"){
+                   
+                    for(var sub = i; sub < MixedArray.length; sub++){
+                        MixedArray[sub] = MixedArray[sub+1]
+                    }
+                    MixedArray.pop()
+                }
+            }
+            console.log(MixedArray);
+        }
+        RemoveStrngs(MixedArray)
+	</script>
+</head>
+<body>
+
+</body>
+</html>
